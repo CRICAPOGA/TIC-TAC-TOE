@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: serif;
+    transition: 0.2s ease-in-out;
+    user-select: none;
+    color: #fff;
+}
+
+body {
+    background: radial-gradient(circle,#7b167a, #290025);/*#3e05a1 #0a011a*/
+    width: 100%;
+    text-align: center;
+    padding-top: 5vh;
+    z-index: 0;
+}
+
+.align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contededorTurnos {
+    width: 170px;
+    height: 80px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+}
+
+.contededorTurnos h3 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.contededorTurnos .cajaTurno {
+    border: 3px solid #000;
+    font-size: 1.6rem;
+    font-weight: bolder;
+}
+
+.contededorTurnos .cajaTurno :nth-child(even) {
+    border-right: none;
+}
+
+.fondoColor {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 85px;
+    height: 40px;
+    background-color: #ff2e63;
+    z-index: -1;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 250px;
+    width: 250px;
+    margin: 30px auto;
+    border: 2px solid #000;
+}
+
+.caja {
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bolder;
+    border: 2px solid #000;
+}
+
+.caja:hover {
+    background-color: #ff2e63;
+}
+
+#jugarDeNuevo {
+    background-color: #ff2e63;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 2rem;
+    display: none;
+    animation: pulso 2s infinite;
+}
+
+#jugarDeNuevo:hover {
+    padding: 10px 40px;
+    background-color: #08D9D6;
+    color: #000;
+}
+
+@keyframes pulso {
+    0% {font-size: 100%;}
+    50% {font-size: 150%;}
+    100% {font-size: 100%;}
+}
