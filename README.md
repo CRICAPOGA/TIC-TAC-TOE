@@ -15,7 +15,7 @@
 <p align="left">
   <h3>Desarrollado por: Cristian Posada</h3>
   <p align="left">
-  <a href="camilochoposada2@gmail.com" title="Gmail">
+  <a href="mailto:camilochoposada2@gmail.com?subject=Consulta&body=Hola,%20quisiera%20saber%20más%20sobre..." title="Gmail">
   <img src="https://img.shields.io/badge/-Gmail-FF0000?style=flat-square&labelColor=FF0000&logo=gmail&logoColor=white&link=LINK-DO-SEU-GMAIL" alt="Gmail"/></a>
   <a href="www.linkedin.com/in/cricapoga" title="LinkedIn">
   <img src="https://img.shields.io/badge/-Linkedin-0e76a8?style=flat-square&logo=Linkedin&logoColor=white&link=LINK-DO-SEU-LINKEDIN" alt="LinkedIn"/></a>
