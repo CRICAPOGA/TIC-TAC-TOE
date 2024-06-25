@@ -3,7 +3,7 @@
 <p align="left">
   <h3>Descripción</h3>
   Este es un juego clásico de Tic Tac Toe (Tres en Raya) desarrollado en JavaScript, HTML y CSS. El objetivo del juego es que dos jugadores se turnen para marcar los espacios en una cuadrícula de 3x3. El primer jugador que consiga alinear tres de sus marcas en una fila horizontal, vertical o diagonal gana el juego.
-  Para jugar de clic aqui: https://cricapoga.github.io/TIC-TAC-TOE/
+  Para jugar de clic aqui: <a href="https://cricapoga.github.io/TIC-TAC-TOE/">CLIC AQUI</a>
 </p>
 <p align="left">
   <h3>Lenguajes</h3>
