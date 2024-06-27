@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+US+Modern:wght@100..400&display=swap');
+
+/*Variables*/
+:root{
+    --color_O:#023EF5;
+    --color_X:#F53100;
+    --color_base:#F000A9;
+    --color_base2:#2B00F0;
+    --color_fondo:#D550F0;/*#7b167a*/
+    --color_fondo2:#7900F0;/*#5C753B*/
+
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,15 +18,15 @@
     font-family: serif;
     transition: 0.2s ease-in-out;
     user-select: none;
-    color: #fff;
+    color: white;
 }
 
 body {
-    background: radial-gradient(circle,#7b167a, #290025);/*#3e05a1 #0a011a*/
+    background: radial-gradient(circle,var(--color_fondo), var(--color_fondo2));
     width: 100%;
+    box-sizing: border-box;
     text-align: center;
     padding-top: 5vh;
-    z-index: 0;
 }
 
 .align {
@@ -30,6 +43,7 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     position: relative;
+    color:black;
 }
 
 .contededorTurnos h3 {
@@ -38,7 +52,7 @@ body {
 }
 
 .contededorTurnos .cajaTurno {
-    border: 3px solid #000;
+    border: 3px solid black;
     font-size: 1.6rem;
     font-weight: bolder;
 }
@@ -47,52 +61,70 @@ body {
     border-right: none;
 }
 
-.fondoColor {
+.fondoColorTurno {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 85px;
     height: 40px;
-    background-color: #ff2e63;
+    background-color: var(--color_X);
     z-index: -1;
 }
 
-.main-grid {
+.tablero {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     height: 250px;
     width: 250px;
     margin: 30px auto;
-    border: 2px solid #000;
+    border: 2px solid black;
+    color: white;
 }
 
 .caja {
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 2rem; /*32px*/
     font-weight: bolder;
-    border: 2px solid #000;
+    border: 2px solid black;
 }
 
 .caja:hover {
-    background-color: #ff2e63;
+    background-color: var(--color_base);
+}
+
+#resultado{
+    position: absolute;/*Lo sobrepone*/
+/*Lo posiciono en el centro del tablero*/
+    align-content: center;
+    top: 34%;
+    left:42%;
+
+    font-size: 1800%; /*16.785rem = 270px*/
+    font-family: "Playwrite US Modern",sans-serif;
+    line-height: 270px;/*Elimina el espacio entre la letra y los bordes top/bottom*/
+    
+    z-index: 1;
 }
 
 #jugarDeNuevo {
-    background-color: #ff2e63;
+    position: relative;
+    z-index: 2;
+
+    background-color: var(--color_base);
     padding: 10px 25px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 2rem; /*2rem = 32px*/
     display: none;
     animation: pulso 2s infinite;
 }
 
 #jugarDeNuevo:hover {
     padding: 10px 40px;
-    background-color: #08D9D6;
-    color: #000;
+    background-color: var(--color_base2);
+    color: white;
 }
 
 @keyframes pulso {

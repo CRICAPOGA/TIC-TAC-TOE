@@ -5,6 +5,11 @@ let cajas = document.querySelectorAll(".caja");
 let turno = "X";
 let juegoTerminado = false;
 
+//Variables colores
+let color_X = "#F53100";
+let color_O = "#023EF5";
+let color_base = "#3B4975";
+
 // Recorre cada elemento en "cajas" y le añade un evento "click"
 cajas.forEach((e) => {
   e.addEventListener("click", () => {
@@ -22,10 +27,12 @@ cajas.forEach((e) => {
 function verificarTurno() {
   if (turno === "X") {
     turno = "O";
-    document.querySelector(".fondoColor").style.left = "85px";
+    document.querySelector(".fondoColorTurno").style.left = "85px";
+    document.querySelector(".fondoColorTurno").style.backgroundColor = color_O;
   } else {
     turno = "X";
-    document.querySelector(".fondoColor").style.left = "0";
+    document.querySelector(".fondoColorTurno").style.left = "0";
+    document.querySelector(".fondoColorTurno").style.backgroundColor = color_X;
   }
 }
 
@@ -59,13 +66,26 @@ function verificarGanador() {
     // Si los tres valores en una condición de victoria son iguales y no están vacíos, hay un ganador
     if (v0 != "" && v0 === v1 && v0 === v2) {
       juegoTerminado = true;
-      document.querySelector("#resultado").innerHTML = turno + "    GANADOR"; //Muestra el ganador
+      document.querySelector("#resultado").innerHTML = turno; //Muestra el ganador
+      //Dependiendo cual gane le da su respectivo color
+      if (turno === "X") {
+        document.querySelector("#resultado").style.color = color_X;
+      } else {
+        document.querySelector("#resultado").style.color = color_O;
+      }
+
+
+
       document.querySelector("#jugarDeNuevo").style.display = "inline"; //Mostrar boton
 
+      //En caso de que gane O se mueve un poco a la izq
+      if (turno === "O") {
+        document.querySelector("#resultado").style.left = "39%";
+      }
       // Cambia el color de fondo y texto de las cajas ganadoras
       for (var j = 0; j < 3; j++) {
-        cajas[condicionesVictoria[i][j]].style.backgroundColor = "#08D9D6";
-        cajas[condicionesVictoria[i][j]].style.color = "#000";
+        cajas[condicionesVictoria[i][j]].style.backgroundColor = color_base2;
+        cajas[condicionesVictoria[i][j]].style.color = "white";
       }
     }
   }
@@ -87,7 +107,7 @@ function verificarEmpate() {
     // Si todas las cajas están llenas y no hay ganador, es un empate
     if (empate) {
       juegoTerminado = true;
-      document.querySelector("#resultado").innerHTML = "EMPATE"; //Muestra el mensaje EMPATE
+      document.querySelector("#resultado").innerHTML = ""; //Muestra el mensaje EMPATE
       document.querySelector("#jugarDeNuevo").style.display = "inline"; //Muestra boton
     }
   }
@@ -98,14 +118,16 @@ document.querySelector("#jugarDeNuevo").addEventListener("click", () => {
   // Reinicia las variables del juego
   juegoTerminado = false;
   turno = "X";
-  document.querySelector(".fondoColor").style.left = "0";
+  document.querySelector(".fondoColorTurno").style.left = "0";
+  document.querySelector(".fondoColorTurno").style.backgroundColor = color_X;
   document.querySelector("#resultado").innerHTML = "";
+  document.querySelector("#resultado").style.left = "42%";
   document.querySelector("#jugarDeNuevo").style.display = "none";
 
   // Limpia el contenido y estilos de todas las cajas
   cajas.forEach((e) => {
     e.innerHTML = "";
     e.style.removeProperty("background-color");
-    e.style.color = "#fff";
+    e.style.color = "Black";//#fff
   });
 });
