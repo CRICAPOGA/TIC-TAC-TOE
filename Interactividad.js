@@ -78,13 +78,9 @@ function verificarGanador() {
 
       document.querySelector("#jugarDeNuevo").style.display = "inline"; //Mostrar boton
 
-      //En caso de que gane O se mueve un poco a la izq
-      if (turno === "O") {
-        document.querySelector("#resultado").style.left = "39%";
-      }
       // Cambia el color de fondo y texto de las cajas ganadoras
       for (var j = 0; j < 3; j++) {
-        cajas[condicionesVictoria[i][j]].style.backgroundColor = color_base2;
+        cajas[condicionesVictoria[i][j]].style.backgroundColor = color_base;
         cajas[condicionesVictoria[i][j]].style.color = "white";
       }
     }
@@ -128,6 +124,6 @@ document.querySelector("#jugarDeNuevo").addEventListener("click", () => {
   cajas.forEach((e) => {
     e.innerHTML = "";
     e.style.removeProperty("background-color");
-    e.style.color = "Black";//#fff
+    e.style.color = "white";
   });
 });

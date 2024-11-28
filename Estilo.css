@@ -6,8 +6,8 @@
     --color_X:#F53100;
     --color_base:#F000A9;
     --color_base2:#2B00F0;
-    --color_fondo:#D550F0;/*#7b167a*/
-    --color_fondo2:#7900F0;/*#5C753B*/
+    --color_fondo:#D550F0;
+    --color_fondo2:#7900F0;
 
 }
 
@@ -21,6 +21,7 @@
     color: white;
 }
 
+/* Computador */
 body {
     background: radial-gradient(circle,var(--color_fondo), var(--color_fondo2));
     width: 100%;
@@ -94,16 +95,14 @@ body {
 }
 
 #resultado{
-    position: absolute;/*Lo sobrepone*/
-/*Lo posiciono en el centro del tablero*/
-    align-content: center;
-    top: 34%;
-    left:42%;
+    position: absolute; /* Mantiene el elemento sobre el tablero */
+    top: 55%; /* Centrado vertical */
+    left: 50%; /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Ajusta la posición al centro */
 
     font-size: 1800%; /*16.785rem = 270px*/
     font-family: "Playwrite US Modern",sans-serif;
     line-height: 270px;/*Elimina el espacio entre la letra y los bordes top/bottom*/
-    
     z-index: 1;
 }
 
@@ -131,4 +130,18 @@ body {
     0% {font-size: 100%;}
     50% {font-size: 150%;}
     100% {font-size: 100%;}
+}
+
+/* Tablet */
+@media(max-width: 768px) {
+    #resultado {
+        font-size: 2000%; /* Ajustar según lo necesario */
+    }
+}
+
+/* Telefono */
+@media(max-width: 376px) {
+    #resultado{
+        font-size: 2000%; /* Ajustar según lo necesario */
+    }
 }
